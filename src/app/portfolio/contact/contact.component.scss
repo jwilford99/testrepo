@@ -1,0 +1,139 @@
+.contact {
+    // overflow: hidden;
+    height: 367px;
+    max-height: 60vh;
+    padding: 24px 0 0 !important;
+    display: flex;
+    flex-direction: column;
+    .vertical-bottom {
+        margin-top: auto;
+        header {
+            h1 {
+                text-align: center;
+                font-size: var(--font-size-1);
+                font-weight: 600;
+                margin: 0 0 16px;
+            }
+        }
+        .contact-wrapper {
+            border-top: 10px solid var(--burg-headers);
+            background-color: var(--dark-theme-bg);
+            padding: 40px 16px;
+            body {
+                height: fit-content;
+                p {
+                    margin: 0;
+                    font-size: var(--font-size-4);
+                    line-height: 1.5;
+                    strong {
+                        color: var(--white-text);
+                        font-weight: 600;
+                    }
+                }
+            }
+            footer {
+                display: flex;
+                .left {
+                    margin: auto 0;
+                    a {
+                        text-align: center;
+                        color: var(--h-color);
+                        font-size: var(--font-size-4);
+                        margin: 0 20px;
+                        line-height: 30px;
+                        font-weight: 500;
+                    }
+                }
+                img {
+                    height: 150px;
+                    max-height: 21vh;
+                    width: auto;
+                    border-radius: 10px;
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.contact::after {
+    height: 103%;
+    width: 103%;
+}
+
+@media screen and (orientation: portrait) and (max-width: 414px) {
+    .contact {
+        overflow-y: auto;
+        .vertical-bottom {
+            .contact-wrapper {
+                padding: 16px !important;
+            }
+        }
+    }
+    .contact::after {
+        height: 74%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .contact {
+        height: fit-content !important;
+        .vertical-bottom {
+            margin-top: 0;
+            margin-bottom: auto;
+            header {
+                margin: 0;
+            }
+            body {
+                p {
+                    font-size: var(--font-size-3) !important;
+                }
+            }
+            footer {
+                flex-direction: column;
+                margin: 15px 0;
+                .left {
+                    a {
+                        font-size: var(--font-size-3) !important;
+                    }
+                }
+                img {
+                    max-height: initial !important;
+                    height: 230px !important;
+                    margin: 15px auto !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .contact {
+        height: calc(100vh - 80px) !important;
+        max-height: initial;
+        .vertical-bottom {
+            .contact-wrapper {
+                border-bottom: 10px solid var(--burg-headers);
+            }
+        }
+    }
+}
+
+
+@media screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    .contact {
+        height: 100vh !important;
+        width: 100vw;
+        max-height: initial;
+        .vertical-bottom {
+            margin: auto 10%;
+        }
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-height: 500px) {
+    .contact {
+        padding: 0 !important;
+        
+    }
+}

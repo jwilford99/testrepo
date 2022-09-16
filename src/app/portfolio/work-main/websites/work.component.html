@@ -1,0 +1,63 @@
+<div class="sites-container">
+    <header>
+        <h1>Websites</h1>
+        <button mat-icon-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
+    </header>
+
+    <body>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let content of cards" class="comments {{ content.id }}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <img src="{{ content.logo }}" alt="">
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <mat-card class="website-card">
+                            <div class="date">{{ content.date }}</div>
+                            <div class="card">
+                                <mat-card-header>
+                                    <mat-card-title> {{ content.title }}<p>
+                                    </mat-card-title>
+                                    <mat-card-subtitle>CLIENT: <span>{{ content.client }} <em>{{ content.clientTitle
+                                                }}</em></span>
+                                        <br>
+                                        MY ROLE: <span>{{ content.myRole }}</span>
+                                        <br>
+                                        Type: <span>{{ content.type }}</span>
+                                        <br>
+                                        URL: <a href="{{ content.url }}" target="_blank">{{ content.url }}</a><span
+                                            id="alt"> {{ content.wwwAlt }}</span>
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                            </div>
+                        </mat-card>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="site-info {{ content.class }}">
+                    <p class="card-text">
+                        <a id="small-link" target="_blank" href="{{ content.url }}" class="{{ content.id }}">
+                            {{ content.www }}</a><span [innerHTML]="content.comments"></span>
+                    </p>
+                    <img src="{{ content.image }}" alt="{{ content.imageAlt }}" class="site-img"
+                        id="{{ content.class2 }}">
+                    <div class="iframe-wrapper {{ content.class2 }}">
+                        <iframe
+                            src="https://defunct.site/issue/9/authors/57/natanya_ann_pulley/213/i_never_thought_it_was_identity"
+                            title="Defunct Magazine">
+                        </iframe>
+
+                        <img src="../../../../assets/img/tryme.png" alt="" class="tryme">
+                    </div>
+
+                </div>
+                <a href="{{ content.url }}" target="_blank">
+                    <button mat-raised-button color="{{ content.buttonColor }}">{{ content.button }}</button></a>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </body>
+    <footer>
+        <p>*I'm available to demo my unpublished/private projects upon request.</p>
+    </footer>
+</div>

@@ -1,0 +1,21 @@
+<div class="work category" [ngClass]="examplesClicked ? 'containerA' : 'containerB'">
+    <div class="work-container" *ngIf="examplesClicked === false; else example">
+        <h1>Check out some of my projects</h1>
+        <div class="projects">
+            <button mat-raised-button class="websites p-button" (click)="showSites()">
+                Websites
+            </button>
+            <!-- /*--temp work section*/(click)="showEmails()" -->
+            <button mat-raised-button class="emails p-button">
+                Landing Pages/Emails
+            </button>
+        </div>
+    </div>
+    <ng-template #example>
+        <button id="back" mat-icon-button (click)="backToMain()">
+            <mat-icon>first_page</mat-icon>
+        </button>
+        <app-work class="app" *ngIf="sitesClicked"></app-work>
+        <app-emails class="app" *ngIf="emailsClicked"></app-emails>
+    </ng-template>
+</div>

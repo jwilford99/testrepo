@@ -1,0 +1,204 @@
+.about {
+    .about-container {
+        height: fit-content;
+        transform: translateY(-16px);
+
+        header {
+            text-align: center;
+            h1 {
+                font-size: var(--font-size-1);
+                color: var(--burg-headers);
+                margin: 0 0 8px;
+                text-shadow: var(--white-text-shadow);
+            }
+        }
+        body {
+            font-size: var(--font-size-3b);
+            line-height: 1.5;
+            font-weight: 200;
+            border-top: 20px solid var(--burg-headers);
+
+            .section-header {
+                height: 50px;
+                border-top: 10px solid var(--burg-headers);
+                border-bottom: 10px solid var(--burg-headers);
+                background-color: rgba(255, 255, 255, 0.4);
+                h2 {
+                    text-align: center;
+                    line-height: 50px;
+                    margin: 0;
+                    font-size: var(--font-size-2);
+                    color: var(--burg-headers);
+                    font-weight: bold;
+                    text-shadow: var(--white-text-shadow);
+                }
+            }
+            section {
+                background-color: var(--dark-theme-bg);
+                padding: 12px 0;
+                #large-text {
+                    font-size: var(--font-size-3);
+                    color: var(--h-color);
+                    font-weight: 400;
+                }
+                .subheader {
+                    background-image: linear-gradient(90deg, rgb(81, 81, 81) 30%, rgb(0, 0, 0) 100%);
+                    text-indent: 25px;
+                    h3 {
+                        font-size: var(--font-size-3);
+                        color: var(--white-text);
+                    }
+                }
+                p {
+                    margin: 0 16px 18px;
+                }
+
+                ul {
+                    list-style-type: none;
+                    margin: 6px;
+                    font-size: var(--font-size-3b);
+                    li {
+                        line-height: 1.5;
+                    }
+                }
+
+                .clients {
+                    ul {
+                        padding-left: 20px;
+                        li {
+                            display: flex;
+                            gap: 20px;
+                            margin-bottom: 20px;
+                            min-height: 80px;
+                            img {
+                                width: 100px;
+                                height: auto;
+                                object-fit: contain;
+                            }
+                            p {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+                .testimonials {
+                    h4 {
+                        margin: 0;
+                    }
+                    ul {
+                        padding: 0 20px 0 28px;
+                        li {
+                            padding: 16px 0;
+                            p {
+                                margin: 0 0 4px;
+                            }
+                        }
+                        li:not(:last-child) {
+                            border-bottom: 1px solid var(--h-color);
+                        }
+                        .person {
+                            line-height: 1.5;
+                            margin: 0;
+                            padding-left: 10px;
+                            font-size: var(--font-size-4);
+                            b,
+                            i {
+                                color: var(--h-color);
+                            }
+                        }
+                    }
+                }
+            }
+            .references-section {
+                border-bottom: 20px solid var(--burg-headers);
+            }
+        }
+    }
+}
+
+.about::after {
+    transform: translateZ(-49px) scale(6);
+    height: 350%;
+    top: initial;
+    left: initial;
+    background-position: initial;
+}
+
+@media screen and (max-width: 700px) and (orientation: portrait) {
+    .about {
+        height: 100% !important;
+        height: 200vmin !important;
+        .about-container {
+            margin-bottom: 200px;
+            body {
+                .section-header {
+                    height: 100px;
+                    h2 {
+                        line-height: 100px;
+                    }
+                }
+            }
+        }
+    }
+    .about::after {
+        height: 150% !important; //test for ios
+    }
+}
+
+@media screen and (max-width: 400px) and (orientation: portrait) {
+    .about::after {
+        height: 115% !important;
+    }
+    .about {
+        height: 320vmin !important;
+        .about-container {
+            margin-bottom: 100vh;
+            body {
+                font-size: var(--font-size-3);
+                section {
+                    .subheader {
+                        h3 {
+                            font-size: var(--font-size-2);
+                        }
+                    }
+                    #large-text {
+                        font-size: var(--font-size-2);
+                    }
+                    div {
+                        ul {
+                            font-size: var(--font-size-3);
+                            li {
+                                .person {
+                                    font-size: var(--font-size-3b);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .about {
+        .about-container {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .about::after {
+        height: 303%;
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    .about {
+        .about-container {
+            transform: initial;
+            margin: 0 10% 80px;
+        }
+    }
+}

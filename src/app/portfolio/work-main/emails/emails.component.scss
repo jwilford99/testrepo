@@ -1,0 +1,148 @@
+.emails-container {
+    position: relative;
+    margin: 32px 8px 0 16px;
+
+    header {
+        h1 {
+            text-align: center;
+            text-shadow: var(--white-text-shadow);
+        }
+    }
+    body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .card-container {
+            margin: 0 16px 40px;
+            max-width: 240px;
+            flex: 1;
+            .email-card {
+                min-width: 242px;
+                width: 100%;
+                height: 320px;
+                position: relative;
+                border-radius: 15px;
+                padding: 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                filter: brightness(0.85);
+                transition: filter 0.3s;
+                cursor: pointer;
+                .top {
+                    background-color: rgba(white, 0.85);
+                    padding: 16px 0 0;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    transition: background-color 0.3s;
+                    mat-card-header {
+                        .company-image {
+                            height: 40px;
+                            width: 40px;
+                            transform: translate(-8px, -24px);
+                            img {
+                                height: 40px !important;
+                                width: 40px !important;
+                                object-fit: contain;
+                                background-color: var(--white-text);
+                                border-radius: 50%;
+                                box-shadow: var(--boxshadow);
+                            }
+                        }
+                    }
+                    mat-card-title {
+                        color: black;
+                        font-weight: 700;
+                    }
+                    mat-card-subtitle {
+                        transform: translateY(-10px);
+                        margin: 0 10px;
+                        span {
+                            color: black;
+                        }
+                    }
+                }
+
+                mat-card-actions {
+                    position: absolute;
+                    bottom: 8px;
+                    left: 0;
+                    width: 100%;
+                    margin: 0;
+                    display: flex;
+                    button {
+                        margin: auto;
+                        background-color: rgba(white, 0.85);
+                        color: #201f5c;
+                        transition: background-color 0.3s;
+                    }
+                }
+            }
+            #bg1 {
+                background-image: url(../../../../assets/img/BookCover.jpg);
+            }
+            #bg2 {
+                background-image: url(../../../../assets/img/BookCover.jpg);
+            }
+        }
+        .card-container:hover {
+            .email-card {
+                filter: brightness(1);
+                transition: filter 0s;
+                .top {
+                    background-color: white;
+                    transition: background-color 0s;
+                }
+                mat-card-actions {
+                    button {
+                        background-color: white;
+                        transition: background-color 0s;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .emails-container {
+        margin: 32px 0 0;
+        body {
+            .card-container {
+                width: calc(50% - 40px);
+                margin: 0 24px 40px 8px;
+            }
+        }
+    }
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+    .emails-container {
+        body {
+            .card-container {
+                width: initial;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) and (orientation: portrait) {
+    .emails-container {
+        margin-bottom: 120vh;
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .emails-container {
+        body {
+            .card-container {
+                .email-card {
+                    filter: brightness(1.1);
+                }
+            }
+        }
+    }
+}

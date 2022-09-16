@@ -1,0 +1,46 @@
+<div class="wrapper">
+
+    <div class="main-menu">
+        <mat-drawer-container [ngClass]="menuOpen ? 'drawerZ' : 'drawerNoZ'" (click)="openMenu()">
+            <mat-drawer #drawer mode="over" (click)="drawer.toggle()">
+                <mat-drawer-content>
+                    <button mat-raised-button routerLink="/home" (click)="reset()">Home</button>
+                    <button mat-raised-button routerLink="/about" (click)="slideRight()">About</button>
+                    <button mat-raised-button routerLink="/work" (click)="slideRight()">Work</button>
+                    <button mat-raised-button routerLink="/contact" (click)="slideRight()">Contact</button>
+                </mat-drawer-content>
+            </mat-drawer>
+        </mat-drawer-container>
+        <div class="reset" (click)="drawer.toggle()" (click)="openMenu()">
+            <div id="top"></div>
+            <div id="middle"></div>
+            <div id="bottom"></div>
+        </div>
+    </div>
+
+    <div class="container" [ngClass]="mobileSlide ? 'yesSlide' : 'noSlide'">
+        <div class="circle-mask"></div>
+        <div class="left" (click)="slideRight()" routerLink="/about">
+            <div class="greendiv"></div>
+        </div>
+        <div class="avatar"></div>
+        <div class="right-container" [ngClass]="mobileText ? 'textOn' : 'textOff'">
+            <div class="right-content1" [ngClass]="rightSlide ? 'content1Out' : 'content1In'">
+                <div class="right">
+                    <div id="hi" class="link" routerLink="/about" (click)="slideRight()"></div>
+                    <div id="my-name-is" class="link" routerLink="/work" (click)="slideRight()"></div>
+                    <div id="jeremy" class="link" routerLink="/contact" (click)="slideRight()"></div>
+                </div>
+            </div>
+            <div class="right-content2" [ngClass]="rightSlide ? 'content2In' : 'content2Out'">
+                <button mat-icon-button (click)="reset()" class="btn-desktop">
+                    <mat-icon>arrow_back_ios_new</mat-icon>
+                </button>
+                <button mat-icon-button (click)="reset()" class="btn-mobile">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

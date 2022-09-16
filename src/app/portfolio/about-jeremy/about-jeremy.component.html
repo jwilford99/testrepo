@@ -1,0 +1,80 @@
+<div class="about category">
+    <div class="about-container">
+        <header>
+            <h1>About me</h1>
+        </header>
+ 
+        <body>
+            <section>
+                <p id="large-text">My name is Jeremy and I am a front-end developer from Phoenix, AZ.</p>
+                <p>
+                    I enjoy building mobile-first, responsive Angular projects with an emphasis on scalability,
+                    reusability and creativity, while adhering to SEO standards. I work well in teams and often bring
+                    "outside-the-box" perspectives and ideas to help solve complex problems. </p>
+                <p>
+                    I also have skills in developing HTML emails -- using pixel-perfect in-line styling while supporting
+                    the table-based HTML parameters of various email services.
+                </p>
+            </section>
+            <div class="section-header" id="sh1">
+                <h2>Clients include:</h2>
+            </div>
+            <section id="client-section">
+                <div class="clients">
+                    <ul>
+                        <li>
+                            <img src="../../../assets/img/coming-soon.png" alt="Toyota Logo">
+                            <p>InJoy Coffee Company <br><small>(est. Dec 2022)</small></p>
+                        </li>
+                        <li>
+                            <img src="../../../assets/img/Toyota-Logo.png" alt="Toyota Logo">
+                            <p>Toyota</p>
+                        </li>
+                        <li>
+                            <img src="../../../assets/img/liu.png" alt="Long Island University Logo">
+                            <p>Long Island University</p>
+                        </li>
+                        <li>
+                            <img src="../../../assets/img/gaslamp2.png" alt="Oblivion Logo">
+                            <p><i>Oblivion</i> Literary Marketing</p>
+                        </li>
+                        <li>
+                            <img src="../../../assets/img/pinnacle.png" alt="Pinnacle Logo">
+                            <p>Pinnacle Auto Glass</p>
+                        </li>
+                        <li>
+                            <img src="../../../assets/img/bodeen.png" alt="Bodeen Logo">
+                            <p>Bodeen Real Estate Group</p>
+                        </li>
+                        <p style="text-align: center;">and more...</p>
+                    </ul>
+                </div>
+            </section>
+            <div class="section-header" id="sh2">
+                <h2>References & Testimonials:</h2>
+            </div>
+            <section class="references-section">
+                <div class="testimonials">
+                    <ul>
+                        <li *ngFor="let content of references">
+                            <p>
+                                <i [innerHTML]="content.quote"></i>
+                            </p>
+                            <div class="person">
+                                <b> {{ content.name }}</b><br>
+                                <i>{{ content.title }}</i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </body>
+    </div>
+</div>
+<!-- <button mat-icon-button (click)="reset()" *ngIf="workClicked" class="back-btn">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+<button *ngIf="sitesClicked || emailsClicked == true" mat-icon-button (click)="backToWork()"
+    class="back-btn2">
+    <mat-icon>arrow_back</mat-icon>
+</button> -->

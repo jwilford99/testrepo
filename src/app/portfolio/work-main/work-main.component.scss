@@ -1,0 +1,271 @@
+.work {
+    max-height: 60vh;
+    width: calc(100% - 40px) !important;
+    padding: 0 !important;
+    .work-container {
+        width: 100%;
+        position: relative;
+        margin: 40px 0 0;
+        border-radius: 10px;
+        h1 {
+            font-size: var(--font-size-2);
+            line-height: 30px;
+            text-align: center;
+            width: 100%;
+            color: var(--dark-headers);
+            margin: 0;
+            font-weight: 600;
+            text-shadow: var(--white-text-shadow);
+        }
+        .projects {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            text-align: center;
+            height: 250px;
+            max-height: 40vh;
+            color: var(--white-text);
+            // margin: 28px 40px auto;
+            margin-top: 24px;
+            justify-content: center;
+            .p-button {
+                flex: 1;
+                min-width: 60%;
+                max-width: 350px;
+                min-height: 60px;
+                white-space: nowrap;
+                background-image: linear-gradient(to right, rgb(14, 21, 32) 0%, #928dab 51%, rgb(14, 21, 32) 100%);
+                margin: 20px 10px;
+                text-align: center;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: var(--white-text);
+                box-shadow: 0 0 20px rgb(51, 51, 51);
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: var(--font-size-2);
+                line-height: 1;
+            }
+
+
+
+            // temp emails section ////////////////////////////////////////////////////////////
+            .emails {
+                position: relative;
+            }
+            .emails:hover {
+                color: rgb(150, 150, 150) !important;
+                background-position: initial !important;
+                filter: grayscale(.5);
+            }
+            .emails::after {
+                content: 'Under construction';
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%) rotateX(90deg);
+                font-size: var(--font-size-3);
+                background-color: rgb(255, 255, 255);
+                color: black;
+                padding: 0;
+                height: fit-content;
+                width: fit-content;
+                transition: .4s;
+            }
+            .emails:hover::after {   
+                content: 'Under construction';
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%) rotateX(0);
+                font-size: var(--font-size-3);
+                background-color: rgb(255, 255, 255);
+                color: var(--burg-headers);             
+                padding: 16px;                
+                transition: .2s;
+                border: 2px solid red;
+            }
+            // temp emails section ///////////////////////////////////////////////////////
+            
+
+
+            .p-button:hover {
+                background-position: right center; /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+    #back {
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-color: rgb(0, 0, 0);
+        mat-icon {
+            font-size: 40px;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            color: var(--white-text);
+            font-weight: bold;
+        }
+    }
+    .app {
+        position: relative;
+        bottom: 40px;
+    }
+}
+.containerA {
+    overflow-y: auto !important;
+    height: 415px;
+    .work-container {
+        height: calc(100% + 80px);
+    }
+}
+
+.containerB {
+    overflow-y: hidden !important;
+    height: 415px !important;
+    .work-container {
+        height: calc(100% - 40px);
+    }
+}
+
+.containerA::after {
+    height: 260%;
+    width: 104%;
+}
+
+.containerB::after {
+    height: 103%;
+    width: 103%;
+}
+
+@media screen and (orientation: portrait) {
+    .work {
+        .work-container {
+            max-height: 400px;
+            .projects {
+                div {
+                    flex: initial !important;
+                    width: 60vw;
+                    max-width: 500px;
+                    margin: auto !important;
+                }
+            }
+        }
+        .app {
+            bottom: 0;
+        }
+    }
+    .containerA {
+        height: initial;
+        display: block;
+        #back {
+            transform: translateX(0px) scale(1.5);
+        }
+    }
+    .work::after {
+        transform: translateZ(-20px) scale(4);
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .containerB {
+        height: 100vh !important;
+        max-height: initial;
+        max-width: initial;
+        width: 100vw !important;
+        top: initial;
+        bottom: 0;
+        .work-container {
+            position: sticky;
+            top: 22%;
+        }
+    }
+    .containerA {
+        max-height: initial;
+        #back {
+            float: right;
+            right: 10px;
+            left: initial;
+            top: 10px;
+            mat-icon {
+                font-weight: initial;
+            }
+        }
+    }
+    .containerA::after {
+        height: 150%;
+    }
+}
+
+@media screen and (max-width: 700px) and (orientation: portrait) {
+    .containerA {
+        height: 100% !important;
+        height: 200vmin !important;
+    }
+    .containerA::after {
+        height: 233% !important;
+        height: 200% !important;
+    }
+    .work {
+        .work-container {
+            .projects {
+                .p-button {
+                    font-size: var(--font-size-1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) and (orientation: portrait) {
+    .containerA {
+        height: 320vmin !important;
+    }
+    .containerA::after {
+        height: 150% !important;
+    }
+
+    // non-iphone-devices (get ngx-device-detector) //
+}
+
+@media screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    .work {
+        display: flex;
+        flex-direction: column;
+        #back {
+            left: 20px;
+            top: 70px;
+        }
+        .work-container {
+            margin: auto;
+            height: 300px;
+        }
+        .app {
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-height: 500px) {
+    .containerA::after {
+        height: 391%;
+    }
+    .containerB {
+        overflow-y: auto !important;
+        min-height: 400px;
+        .work-container {
+            height: fit-content;
+            position: fixed;
+            bottom: 0;
+            .projects {
+                height: initial;
+                max-height: initial;
+                margin: 0;
+            }
+        }
+    }
+}
